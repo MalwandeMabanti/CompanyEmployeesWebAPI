@@ -17,6 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Contracts", "..\Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contracts", "..\Contracts\Contracts.csproj", "{6D218B11-B283-47AB-B5F5-2B481CDC284D}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Entities", "..\Entities\Entities\Entities.csproj", "{876B6DC8-FBDE-43A4-87BF-B1A41DB4C692}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1E45A4D-E0DF-4E1B-BBFD-8EA04227AE01}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +58,10 @@ Global
 		{6D218B11-B283-47AB-B5F5-2B481CDC284D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D218B11-B283-47AB-B5F5-2B481CDC284D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D218B11-B283-47AB-B5F5-2B481CDC284D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{876B6DC8-FBDE-43A4-87BF-B1A41DB4C692}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876B6DC8-FBDE-43A4-87BF-B1A41DB4C692}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876B6DC8-FBDE-43A4-87BF-B1A41DB4C692}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876B6DC8-FBDE-43A4-87BF-B1A41DB4C692}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
