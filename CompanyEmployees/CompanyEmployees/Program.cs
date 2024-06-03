@@ -2,6 +2,7 @@ using CompanyEmployees.Extensions;
 using CompanyEmplyees.Extensions;
 using Contracts;
 using Microsoft.AspNetCore.HttpOverrides;
+using Microsoft.AspNetCore.Mvc;
 using NLog;
 
 
@@ -19,7 +20,11 @@ builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureSqlContext(builder.Configuration);
 builder.Services.AddAutoMapper(typeof(Program));
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(config => {
+    config.RespectBrowserAcceptHeader = true;
+    config.ReturnHttpNotAcceptable = true;
+}).AddXmlDataContractSerializerFormatters()
+  .AddCustomCSVFormatter()
     .AddApplicationPart(typeof(CompanyEmployees.Presentation.AssemblyReference).Assembly);
 
 var app = builder.Build();
