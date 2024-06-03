@@ -8,5 +8,6 @@ namespace Service.Contracts
 
         CompanyDto GetCompany(Guid companyId, bool trackchanges);
 
+        CompanyDto CreateCompany(CompanyForCreationDto company);
     }
 }
