@@ -24,6 +24,12 @@ namespace Repository
             .SingleOrDefault();
 #pragma warning restore CS8603 // Possible null reference return.
 
+        public void CreateEmployeeForCompany(Guid companyId, Employee employee) 
+        {
+            employee.CompanyId = companyId;
+            Create(employee);
+        }
+
 
     }
 }
