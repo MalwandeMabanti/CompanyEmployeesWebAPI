@@ -18,6 +18,10 @@ namespace Repository
             FindByCondition(_ => _.Id.Equals(companyId), trackChanges)
             .SingleOrDefault();
 
-        public void CreateCompany(Company company) => Create(company);    
+        public void CreateCompany(Company company) => Create(company);  
+        
+        public IEnumerable<Company> GetByIds(IEnumerable<Guid> ids, bool trackChanges) =>
+            FindByCondition(_ => ids.Contains(_.Id), trackChanges)
+            .ToList();
     }
 }
