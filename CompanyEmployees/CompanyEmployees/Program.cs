@@ -27,7 +27,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 });
 
 NewtonsoftJsonPatchInputFormatter GetJsonPatchInputFormatter() =>
-    (NewtonsoftJsonPatchInputFormatter)new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
+    new ServiceCollection().AddLogging().AddMvc().AddNewtonsoftJson()
     .Services.BuildServiceProvider()
     .GetRequiredService<IOptions<MvcOptions>>().Value.InputFormatters
     .OfType<NewtonsoftJsonPatchInputFormatter>().First();
