@@ -10,8 +10,6 @@ namespace Shared.DataTransferObjects
 {
     public record CompanyForCreationDto
     {
-
-
         [Required(ErrorMessage = "The company name is a required field.")]
         [MaxLength(30, ErrorMessage = "Company name cannot be more than 30 characters.")]
         public string? Name { get; init; }
@@ -23,7 +21,5 @@ namespace Shared.DataTransferObjects
         [Required(ErrorMessage = "The country is a required field")]
         [MaxLength(20, ErrorMessage = "The country name cannot be mre than 20 characters.")]
         public string? Country { get; init; }
-
-        public IEnumerable<EmployeeForCreationDto>? Employees { get; set; }
     }
 }
