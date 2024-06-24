@@ -1,5 +1,6 @@
 ﻿using Contracts;
 using Entities.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,14 +15,14 @@ namespace Repository
             : base(repositoryContext)
         { }
 
-        public IEnumerable<Employee> GetEmployees(Guid companyId, bool trackChanges) =>
-            FindByCondition(_ => _.CompanyId.Equals(companyId), trackChanges)
-            .OrderBy(_ => _.Name).ToList();
+        public async Task<IEnumerable<Employee>> GetEmployeesAsync(Guid companyId, bool trackChanges) =>
+            await FindByCondition(_ => _.CompanyId.Equals(companyId), trackChanges)
+            .OrderBy(_ => _.Name).ToListAsync();
 
 #pragma warning disable CS8603 // Possible null reference return.
-        public Employee GetEmployee(Guid companyId, Guid id, bool trackChanges) =>
-            FindByCondition(_ => _.CompanyId.Equals(companyId) && _.Id.Equals(id), trackChanges)
-            .SingleOrDefault();
+        public async Task<Employee> GetEmployeeAsync(Guid companyId, Guid id, bool trackChanges) =>
+            await FindByCondition(_ => _.CompanyId.Equals(companyId) && _.Id.Equals(id), trackChanges)
+            .SingleOrDefaultAsync();
 #pragma warning restore CS8603 // Possible null reference return.
 
         public void CreateEmployeeForCompany(Guid companyId, Employee employee) 
